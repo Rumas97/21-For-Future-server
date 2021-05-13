@@ -41,10 +41,11 @@ app.use('/api', allRoutes);
 const authRoutes = require("./routes/auth.routes")
 app.use('/api', authRoutes);
 
-/* 
+
 const challengesRoutes = require("./routes/challenges.routes")
 app.use('/api', challengesRoutes);
 
+/* 
 const cloudinaryRoutes = require("./routes/cloudinary.routes")
 app.use('/api', cloudinaryRoutes);
 

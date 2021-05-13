@@ -68,11 +68,11 @@ router.post("/login", (req, res)=>{
  //Validation
   if ( !email || !password) {
     res.status(500).json({
-        error: 'Please enter Username. email and password',
+        error: 'Please enter email and password',
     })
     return;  
   }
-
+  
   const myRegex = new RegExp(/^[a-z0-9](?!.*?[^\na-z0-9]{2})[^\s@]+@[^\s@]+\.[^\s@]+[a-z0-9]$/);
     if (!myRegex.test(email)) {
       res.status(500).json({
@@ -81,45 +81,43 @@ router.post("/login", (req, res)=>{
       return;  
     }
 
-  UserModel.findOne({email})
-    .then((userData)=>{
-      return bcrypt.compare(password, userData.password)  
+    UserModel.findOne({email})
+    .then((userData) => {
+         //check if passwords match
+        bcrypt.compare(password, userData.password)
+        .then((doesItMatch) => {
+              //if it matches
+          if (doesItMatch) {
+                // req.session is the special object that is available to you
+            userData.password = "***";
+            req.session.loggedInUser = userData;
+            res.status(200).json(userData)
+          }
+              //if passwords do not match
+          else {
+            res.status(500).json({
+            error: 'Passwords don\'t match',
+            })
+            return; 
+          }
+        })
 
+        .catch(() => {
+             res.status(500).json({
+               error: 'Bcrypt crashing',
+             })
+            return; 
+        });
     })
 
-    .catch((err)=>{
+  //throw an error if the user does not exists 
+    .catch((err) => {
       res.status(500).json({
-        error: 'Bcrypt crashing',
-        message: err
+          error: 'Email does not exist',
+          message: err
       })
       return;  
-    }) 
-    
-    .then((doesItMatch)=>{
-      if (doesItMatch) {
-        // req.session is the special object that is available to you
-        userData.password = "***";
-        req.session.loggedInUser = userData;
-        res.status(200).json(userData)
-      }
-      //if passwords do not match
-      else {
-          res.status(500).json({
-              error: 'Passwords don\'t match',
-          })
-        return; 
-      }  
-
-    })
-    
-    .catch((err)=>{
-      res.status(500).json({
-        error: 'Email does not exist',
-        message: err
-      })
-      return;  
-    })  
-
+    });
 
 })
 
