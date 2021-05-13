@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs")
 
 //http://localhost:5005/api/signup
 router.post("/signup", (req,res)=>{
-  const {username, email, password, profilePic} = req.body
+  const {username, email, password} = req.body
 
  //VALIDATION 
 
@@ -142,6 +142,46 @@ const userIsLoggedIn = (req, res, next)=>{
 
 router.get("/profile", userIsLoggedIn, (req,res,next)=>{
   res.status(200).json(req.session.loggedInUser);
+})
+
+router.patch("/profile/:id/edit", userIsLoggedIn, (req, res)=>{
+  
+  const {id} = req.params 
+  //We need to use bcrypt again
+  const {username, password} = req.body
+  let salt = bcrypt.genSaltSync(10);
+  let hash = bcrypt.hashSync(password, salt);
+  UserModel.findByIdAndUpdate(id, {$set: {username, password: hash}}, {new: true})
+    .then((user)=>{
+      user.password = "***";
+      res.status(200).json(user)
+    })
+    
+
+    .catch((err)=>{
+      res.status(500).json({
+        error: "profile not edited",
+        message: err
+      })
+    })
+  
+      
+
+})
+
+router.delete("/profile/:id/delete", userIsLoggedIn, (req,res)=>{
+  const {id} = req.params
+  UserModel.findByIdAndDelete(id)
+    .then((response)=>{
+      res.status(200).json(response)  
+    })
+
+    .catch((err)=>{
+      res.status(500).json({
+        error: "Profile not deleted",
+        message: err
+      })  
+    })
 })
 
 module.exports = router

@@ -25,17 +25,22 @@ router.post("/user-challenge/start/:challengeId", (req,res)=>{
 })
 
 
-router.get("/user-challenge/:", (req,res)=>{
+router.get("/user-challenge/:id", (req,res)=>{
   
   const {id} = req.params
 
   userChallengeModel.findById(id)
+    .populate("User", "Challenge") //Will populate show in Postman? What is postman exactly for?
     .then((response)=>{
-
+      res.status(200).json(response)
+      
     })
     
-    .catch(()=>{
-
+    .catch((err)=>{
+      res.status(500).json({
+        error: "Error while getting back the user challenge",
+        message: err
+      })      
     })
 })
 
