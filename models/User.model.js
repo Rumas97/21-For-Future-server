@@ -6,7 +6,16 @@ const userSchema = new Schema({
     type: String,
     // unique: true -> Ideally, should be unique, but its up to you
   },
-  password: String,
+  email: {
+    type: String,
+    required: true,
+  },
+
+  password: {
+    type: String,
+    required: true
+  },
+  profilePic: String,
 });
 
 const User = model("User", userSchema);
