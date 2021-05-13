@@ -45,15 +45,18 @@ app.use('/api', authRoutes);
 const challengesRoutes = require("./routes/challenges.routes")
 app.use('/api', challengesRoutes);
 
-/* 
-const cloudinaryRoutes = require("./routes/cloudinary.routes")
-app.use('/api', cloudinaryRoutes);
+
 
 const userChallengeRoutes = require("./routes/userChallenge.routes")
 app.use('/api', userChallengeRoutes);
 
+/* 
 const stripeRoutes = require("./routes/donation.routes")
 app.use('/api', stripeRoutes);
+
+
+const cloudinaryRoutes = require("./routes/cloudinary.routes")
+app.use('/api', cloudinaryRoutes);
 
 */
 
