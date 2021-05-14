@@ -7,6 +7,8 @@ router.post("/user-challenge/start/:challengeId", (req,res)=>{
 
   //the userId will come from the sessions.
   const userId = req.session.loggedInUser._id
+  console.log(userId)
+  console.log('we are here')
   const {challengeId} = req.params
 
   userChallengeModel.create({userId, challengeId})
