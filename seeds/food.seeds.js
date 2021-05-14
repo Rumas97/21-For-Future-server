@@ -5,7 +5,7 @@ const challengesModel = require ("../models/Challenge.model")
 const challenges = [
   {
     challengeName: "Dairy Free", 
-    challengeImage: "https://www.clipartmax.com/png/middle/101-1016762_doodle-ff-30-milk-doodle.png",
+    challengeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROqu7MTjyTPUjUX2jNGGr0cd2xJtgpV51CIA&usqp=CAU",
     category: "Food",
     challengeDay: [
       {
