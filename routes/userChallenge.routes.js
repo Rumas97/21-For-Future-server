@@ -30,7 +30,7 @@ router.get("/user-challenge/:id", (req,res)=>{
   const {id} = req.params
 
   userChallengeModel.findById(id)
-    .populate("User", "Challenge") //Will populate show in Postman? What is postman exactly for?
+    .populate("userId challengeId") 
     .then((response)=>{
       res.status(200).json(response)
       
