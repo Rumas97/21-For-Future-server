@@ -83,6 +83,7 @@ router.post("/login", (req, res)=>{
 
     UserModel.findOne({email})
     .then((userData) => {
+      //console.log("this is the userData" + userData)
          //check if passwords match
         bcrypt.compare(password, userData.password)
         .then((doesItMatch) => {
@@ -91,6 +92,7 @@ router.post("/login", (req, res)=>{
                 // req.session is the special object that is available to you
             userData.password = "***";
             req.session.loggedInUser = userData;
+            //console.log("the login user" + req.session.loggedInUser)
             res.status(200).json(userData)
           }
               //if passwords do not match
