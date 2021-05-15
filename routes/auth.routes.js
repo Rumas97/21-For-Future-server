@@ -83,6 +83,7 @@ router.post("/login", (req, res)=>{
 
     UserModel.findOne({email})
     .then((userData) => {
+      console.log("this is the userData" + userData)
          //check if passwords match
         bcrypt.compare(password, userData.password)
         .then((doesItMatch) => {
@@ -90,7 +91,9 @@ router.post("/login", (req, res)=>{
           if (doesItMatch) {
                 // req.session is the special object that is available to you
             userData.password = "***";
+            req.app.locals.loggedInUser = true;
             req.session.loggedInUser = userData;
+            console.log("the login user" + req.session.loggedInUser)
             res.status(200).json(userData)
           }
               //if passwords do not match
@@ -128,6 +131,7 @@ router.post("/logout", (req, res)=>{
 
 //--------The Middleware-----------//
 const userIsLoggedIn = (req, res, next)=>{
+
   if (req.session.loggedInUser){
     next()
 
@@ -141,7 +145,21 @@ const userIsLoggedIn = (req, res, next)=>{
 }
 
 router.get("/profile", userIsLoggedIn, (req,res,next)=>{
-  res.status(200).json(req.session.loggedInUser);
+ 
+  let userProfileId = req.session.loggedInUser._id
+  console.log("where is the userProfile id")
+  console.log(userProfileId)
+
+  UserModel.findById(userProfileId)
+    .then(()=>{
+      res.status(200).json(req.session.loggedInUser);
+
+    })
+
+    .catch((err)=>{
+      next(err)
+    })
+
 })
 
 router.patch("/profile/:id/edit", userIsLoggedIn, (req, res)=>{
