@@ -4,6 +4,24 @@ const UserModel = require ("../models/User.model")
 //We require bcrypt.js
 const bcrypt = require("bcryptjs")
 
+
+//--------The Middleware-----------//
+const userIsLoggedIn = (req, res, next)=>{
+
+  if (req.session.loggedInUser){
+    next()
+
+  }
+  else {
+    res.status(401).json({
+      message: 'Unauthorized user',
+      code: 401,
+    })
+    console.log('this is where id gets lost')
+  }
+}
+
+
 //http://localhost:5005/api/signup
 router.post("/signup", (req,res)=>{
   const {username, email, password} = req.body
@@ -124,40 +142,20 @@ router.post("/login", (req, res)=>{
 
 })
 
-router.post("/logout", (req, res)=>{
-  req.session.destroy()
-  res.status(204).json({})
-})
-
-//--------The Middleware-----------//
-const userIsLoggedIn = (req, res, next)=>{
-
-  if (req.session.loggedInUser){
-    next()
-
-  }
-  else {
-    res.status(401).json({
-      message: 'Unauthorized user',
-      code: 401,
-    })
-  }
-}
-
-router.get("/profile", userIsLoggedIn, (req,res,next)=>{
+router.get("/profile", userIsLoggedIn, (req,res)=>{
  
-  let userProfileId = req.session.loggedInUser._id
-  console.log("where is the userProfile id")
-  console.log(userProfileId)
+  const {_id} = req.session.loggedInUser
+  // console.log("where is the userProfile id")
+  // console.log(userProfileId)
 
-  UserModel.findById(userProfileId)
-    .then(()=>{
-      res.status(200).json(req.session.loggedInUser);
+  UserModel.findById(_id)
+    .then((response)=>{
+      res.status(200).json(response);
 
     })
 
     .catch((err)=>{
-      next(err)
+      console.log('no profile')
     })
 
 })
@@ -201,5 +199,14 @@ router.delete("/profile/:id/delete", userIsLoggedIn, (req,res)=>{
       })  
     })
 })
+
+router.post("/logout", (req, res)=>{
+  req.session.destroy()
+  res.status(204).json({})
+})
+
+
+
+
 
 module.exports = router
