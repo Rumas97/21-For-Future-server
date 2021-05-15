@@ -3,6 +3,7 @@ const router = express.Router()
 const UserModel = require ("../models/User.model")
 //We require bcrypt.js
 const bcrypt = require("bcryptjs")
+const { set } = require("mongoose")
 
 
 //--------The Middleware-----------//
@@ -160,7 +161,19 @@ router.get("/profile", userIsLoggedIn, (req,res)=>{
 
 })
 
-router.patch("/profile/:id/edit", userIsLoggedIn, (req, res)=>{
+router.get("/profile/:id", userIsLoggedIn, (req,res)=>{
+  const {id} = req.params
+  UserModel.findById(id)
+    .then((response)=>{
+      res.status(200).json(response)
+    })
+
+    .catch(()=>{
+      console.log ("another route failing")
+    })
+})
+
+router.patch("/profile/:id", userIsLoggedIn, (req, res)=>{
   
   const {id} = req.params 
   //We need to use bcrypt again
@@ -168,9 +181,9 @@ router.patch("/profile/:id/edit", userIsLoggedIn, (req, res)=>{
   let salt = bcrypt.genSaltSync(10);
   let hash = bcrypt.hashSync(password, salt);
   UserModel.findByIdAndUpdate(id, {$set: {username, password: hash}}, {new: true})
-    .then((user)=>{
+    .then((response)=>{
       user.password = "***";
-      res.status(200).json(user)
+      res.status(200).json(response)
     })
     
 
