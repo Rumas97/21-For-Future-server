@@ -1,24 +1,24 @@
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv
-require('dotenv/config');
+require('dotenv/config')
 
 // ℹ️ Connects to the database
-require('./db');
+require('./db')
 
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
-const express = require('express');
+const express = require('express')
 
-const app = express();
+const app = express()
 
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
 
 
-//SETTING UP THE SESSIONS 
+//---SETTING UP THE SESSIONS----//
 
-const session = require("express-session");
-const MongoStore = require("connect-mongo");
+const session = require("express-session")
+const MongoStore = require("connect-mongo")
 
 app.use(session({
   secret: process.env.SESSION_SECRET, // to access it we add "process.env"
@@ -31,7 +31,7 @@ app.use(session({
     mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/21-for-future",
     ttl: 60*60*24, // is in seconds. expiring in 1 day
   })
-}));
+}))
 
 // 👇 Start handling routes here
 // Contrary to the views version, all routes are controlled from the routes/index.js
@@ -39,16 +39,13 @@ const allRoutes = require('./routes')
 app.use('/api', allRoutes);
 
 const authRoutes = require("./routes/auth.routes")
-app.use('/api', authRoutes);
-
+app.use('/api', authRoutes)
 
 const challengesRoutes = require("./routes/challenges.routes")
-app.use('/api', challengesRoutes);
-
-
+app.use('/api', challengesRoutes)
 
 const userChallengeRoutes = require("./routes/userChallenge.routes")
-app.use('/api', userChallengeRoutes);
+app.use('/api', userChallengeRoutes)
 
 /* 
 const stripeRoutes = require("./routes/donation.routes")

@@ -1,11 +1,10 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require("mongoose")
 
-// TODO: Please make sure you edit the user model to whatever makes sense in this case
 const userSchema = new Schema({
   username: {
     type: String,
-    // unique: true -> Ideally, should be unique, but its up to you
   },
+
   email: {
     type: String,
     required: true,
@@ -15,7 +14,9 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+
   profilePic: String,
+  
 });
 
 const User = model("User", userSchema);

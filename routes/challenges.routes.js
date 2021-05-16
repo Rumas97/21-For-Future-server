@@ -28,11 +28,9 @@ router.get("/challenges/:category", (req,res)=>{
 router.get("/challenges/:category/:id", (req,res)=>{
 
   const {id} = req.params 
-  //Changing to "details" instead of ":category"  
-  console.log(id)
+  
   ChallengeModel.findById(id)
     .then((response)=>{
-      console.log(response)
       res.status(200).json(response)
     })
 

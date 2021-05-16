@@ -1,4 +1,4 @@
-require("../db");
+require("../db")
 const mongoose = require("mongoose")
 const challengesModel = require ("../models/Challenge.model")
 
@@ -9,13 +9,13 @@ const challenges = [
     category: "Food",
     challengeDay: [
       {
-        description: "Going dairy free is good for the environment",
-        list: [String],
-        url: String,
+        description: "For today, go out and buy some plant based milk. It can be almond, soy, oat",
+        list: ["Water, Almond, Glass"],
+        url: <iframe width="560" height="315" src="https://www.youtube.com/embed/TQtRv-wdaJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
         day: 1
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Have you ever heard about tofu? It its a great source of calcium",
         list: [String],
         url: String,
         day: 2
