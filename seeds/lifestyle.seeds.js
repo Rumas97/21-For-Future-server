@@ -1,4 +1,4 @@
-require("../db");
+require("../db")
 const mongoose = require("mongoose")
 const challengesModel = require ("../models/Challenge.model")
 

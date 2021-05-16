@@ -1,18 +1,18 @@
-require("../db");
+require("../db")
 const mongoose = require("mongoose")
 const challengesModel = require ("../models/Challenge.model")
 
 const challenges = [
   {
     challengeName: "Dairy Free", 
-    generalDesc: "Cow’s milk is inarguably the most popular and accessible kind of milk. Unfortunately, it has by far the greatest impact on the environment. Cow’s milk requires nine times as much land and produces three times as much carbon emissions than any non-dairy milk alternative"
+    generalDesc: "Cow’s milk is inarguably the most popular and accessible kind of milk. Unfortunately, it has by far the greatest impact on the environment. Cow’s milk requires nine times as much land and produces three times as much carbon emissions than any non-dairy milk alternative",
     challengeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROqu7MTjyTPUjUX2jNGGr0cd2xJtgpV51CIA&usqp=CAU",
     category: "Food",
     challengeDay: [
       {
-        description: "Going dairy free is good for the environment",
-        list: [String],
-        url: String,
+        description: "For today, go out and buy some plant based milk. It can be almond, soy, oat",
+        list: ["Water, Almond, Glass"],
+        url: <iframe width="560" height="315" src="https://www.youtube.com/embed/TQtRv-wdaJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
         day: 1
       },
       {
