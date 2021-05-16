@@ -46,7 +46,9 @@ router.post("/user-challenge/start/:challengeId", isLoggedIn,  (req,res)=>{
 
 
 router.get("/user-challenge/:id", isLoggedIn, (req,res)=>{
-  
+  console.log('are we here?')
+  console.log(req.params)
+  console.log(req.sessions)
   const {id} = req.params
 
   userChallengeModel.findById(id)
