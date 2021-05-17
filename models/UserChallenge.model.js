@@ -1,4 +1,9 @@
 const { Schema, model } = require("mongoose")
+const Challenge = require("./Challenge.model")
+const User = require ("./User.model")
+
+
+
 
 const UserChallengeSchema = new Schema ({
 

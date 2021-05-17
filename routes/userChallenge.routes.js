@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const userChallengeModel = require("../models/UserChallenge.model")
+const UserChallengeModel = require("../models/UserChallenge.model")
 
 //Middleware to protect the routes
 const isLoggedIn = (req, res, next) => {  
@@ -24,7 +24,7 @@ router.post("/user-challenge/start/:challengeId", isLoggedIn,  (req,res)=>{
   const userId = req.session.loggedInUser._id 
   const {challengeId} = req.params
 
-  userChallengeModel.create({userId, challengeId})
+  UserChallengeModel.create({userId, challengeId})
     .then((response)=>{
      
       res.status(200).json(response)
@@ -35,18 +35,37 @@ router.post("/user-challenge/start/:challengeId", isLoggedIn,  (req,res)=>{
       res.status(500).json({
         error: "Error while starting the challenge",
         message: err
-      })  
+        })  
     })
 })
 
+router.get("/user-challenge/all-challenges", (req, res)=>{
 
+  //const {_id} = req.sessions.loggedInUser
+  let _id = "609f923dc7eedc4d6c241474"
+  UserChallengeModel.find({userId: _id})
+    .populate("challengeId")
+    .then((response)=>{
+      res.status(200).json(response)
+      //We need to try to send only the name, for performance reasons. Now we send everything
+      console.log(response)
+    })
+
+    .catch(()=>{
+
+    })
+
+
+})
+
+
+
+//THIS ONE IS FOR DISPLAY THE USER CHALLENGE THAT HE IS CURRENTLY DOING
 router.get("/user-challenge/:id", isLoggedIn, (req,res)=>{
-  console.log('are we here?')
-  console.log(req.params)
-  console.log(req.sessions)
+
   const {id} = req.params
 
-  userChallengeModel.findById(id)
+  UserChallengeModel.findById(id)
     .populate("userId challengeId") 
     .then((response)=>{
       res.status(200).json(response)
@@ -60,6 +79,8 @@ router.get("/user-challenge/:id", isLoggedIn, (req,res)=>{
       })      
     })
 })
+
+
 
 
 module.exports = router
