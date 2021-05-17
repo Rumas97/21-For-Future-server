@@ -60,6 +60,7 @@ router.post("/signup", (req,res)=>{
   UserModel.create({username, email, password: hash})
     .then((user)=>{
       user.password = "***"; //Just changing the object to not send it to the front end
+      req.session.loggedInUser = user
       res.status(200).json(user);
     })
 

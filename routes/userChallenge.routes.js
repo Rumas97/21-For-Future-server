@@ -39,10 +39,10 @@ router.post("/user-challenge/start/:challengeId", isLoggedIn,  (req,res)=>{
     })
 })
 
-router.get("/user-challenge/all-challenges", (req, res)=>{
+router.get("/user-challenge/all-challenges", isLoggedIn, (req, res)=>{
 
-  //const {_id} = req.sessions.loggedInUser
-  let _id = "609f923dc7eedc4d6c241474"
+  const {_id} = req.session.loggedInUser
+  //let _id = "609f923dc7eedc4d6c241474"
   UserChallengeModel.find({userId: _id})
     .populate("challengeId")
     .then((response)=>{
@@ -57,6 +57,27 @@ router.get("/user-challenge/all-challenges", (req, res)=>{
 
 
 })
+
+router.patch("/user-challenge/:id", (req, res)=>{
+
+  const {id} = req.params 
+  const {dayTracker} = req.body 
+  
+  UserChallengeModel.findByIdAndUpdate(id, {$addToSet: {dayTracker}}, {new: true})
+    .then((response)=>{
+      res.status(200).json(response)
+
+    })
+
+    .catch(()=>{
+      res.status(500).json({
+        error: "track number not working",
+        message: err
+      })
+    })
+})
+
+
 
 
 
