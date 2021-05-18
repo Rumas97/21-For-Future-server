@@ -47,15 +47,15 @@ app.use('/api', challengesRoutes)
 const userChallengeRoutes = require("./routes/userChallenge.routes")
 app.use('/api', userChallengeRoutes)
 
-/* 
+/*
 const stripeRoutes = require("./routes/donation.routes")
 app.use('/api', stripeRoutes);
-
+*/
 
 const cloudinaryRoutes = require("./routes/cloudinary.routes")
 app.use('/api', cloudinaryRoutes);
 
-*/
+
 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
