@@ -4,6 +4,7 @@ const ChallengeSchema = new Schema ({
 
   challengeName: String, 
   challengeImage: String,
+  generalDesc: String,
   category: {
       type: String,
       enum: ["Food", "Lifestyle", "Mobility", "Period"],
