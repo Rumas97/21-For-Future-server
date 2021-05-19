@@ -56,6 +56,9 @@ app.use('/api', stripeRoutes);
 const cloudinaryRoutes = require("./routes/cloudinary.routes")
 app.use('/api', cloudinaryRoutes);
 
+const googleRoutes = require("./routes/google.routes")
+app.use("/api", googleRoutes )
+
 app.use((req, res, next) => {
 	// If no routes match, send them the React HTML.
 	res.sendFile(__dirname + "/public/index.html");
