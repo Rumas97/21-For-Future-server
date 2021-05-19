@@ -12,7 +12,7 @@ const challenges = [
       {
         description: "For today, go out and buy some plant based milk. It can be almond, soy, oat",
         list: ["Water, Almond, Glass"],
-        url: <iframe width="560" height="315" src="https://www.youtube.com/embed/TQtRv-wdaJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
+        url: String,
         day: 1
       },
       {
