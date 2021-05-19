@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.17f4a4dd.chunk.css",
+    "main.js": "/static/js/main.9cb79028.chunk.js",
+    "main.js.map": "/static/js/main.9cb79028.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2739a623.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2739a623.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.7da2bdb9.chunk.js": "/static/js/2.7da2bdb9.chunk.js",
+    "static/js/2.7da2bdb9.chunk.js.map": "/static/js/2.7da2bdb9.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.17f4a4dd.chunk.css.map": "/static/css/main.17f4a4dd.chunk.css.map",
+    "static/js/2.7da2bdb9.chunk.js.LICENSE.txt": "/static/js/2.7da2bdb9.chunk.js.LICENSE.txt",
+    "static/media/Battery.febc827f.svg": "/static/media/Battery.febc827f.svg",
+    "static/media/EcoEducation.727a494c.svg": "/static/media/EcoEducation.727a494c.svg",
+    "static/media/avatar.2e4ef16d.png": "/static/media/avatar.2e4ef16d.png",
+    "static/media/greenpeace.d8930cef.png": "/static/media/greenpeace.d8930cef.png",
+    "static/media/vivaconagua.c41b2f83.png": "/static/media/vivaconagua.c41b2f83.png",
+    "static/media/wwf.d9b00071.png": "/static/media/wwf.d9b00071.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2739a623.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.7da2bdb9.chunk.js",
+    "static/css/main.17f4a4dd.chunk.css",
+    "static/js/main.9cb79028.chunk.js"
+  ]
+}
