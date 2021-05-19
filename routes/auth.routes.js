@@ -147,11 +147,11 @@ router.post("/login", (req, res)=>{
 router.get("/profile", userIsLoggedIn, (req,res)=>{
  
   const {_id} = req.session.loggedInUser
-  // console.log("where is the userProfile id")
-  // console.log(userProfileId)
 
   UserModel.findById(_id)
     .then((response)=>{
+      console.log("we are here today")
+      console.log(response)
       res.status(200).json(response);
 
     })
@@ -166,6 +166,7 @@ router.get("/profile/:id", userIsLoggedIn, (req,res)=>{
   const {id} = req.params
   UserModel.findById(id)
     .then((response)=>{
+      console.log(response)
       res.status(200).json(response)
     })
 
@@ -178,12 +179,23 @@ router.patch("/profile/:id", userIsLoggedIn, (req, res)=>{
   
   const {id} = req.params 
   //We need to use bcrypt again
-  const {username, password} = req.body
-  let salt = bcrypt.genSaltSync(10);
-  let hash = bcrypt.hashSync(password, salt);
-  UserModel.findByIdAndUpdate(id, {$set: {username, password: hash}}, {new: true})
+  const {username, password, profilePic} = req.body
+  let editedProfile = {}
+  if (username) {
+    editedProfile.username = username
+  }
+  if (password) {
+    let salt = bcrypt.genSaltSync(10);
+    let hash = bcrypt.hashSync(password, salt);
+    editedProfile.password = hash
+  }
+  if (profilePic) {
+    editedProfile.profilePic = profilePic
+  }
+  console.log(password, editedProfile)
+  UserModel.findByIdAndUpdate(id, {$set: editedProfile}, {new: true})
     .then((response)=>{
-      user.password = "***";
+      response.password = "***";
       res.status(200).json(response)
     })
     
