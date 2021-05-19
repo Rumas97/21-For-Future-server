@@ -33,6 +33,9 @@ app.use(session({
   })
 }))
 
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+
 // 👇 Start handling routes here
 // Contrary to the views version, all routes are controlled from the routes/index.js
 const allRoutes = require('./routes')
@@ -53,7 +56,10 @@ app.use('/api', stripeRoutes);
 const cloudinaryRoutes = require("./routes/cloudinary.routes")
 app.use('/api', cloudinaryRoutes);
 
-
+app.use((req, res, next) => {
+	// If no routes match, send them the React HTML.
+	res.sendFile(__dirname + "/public/index.html");
+});
 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes

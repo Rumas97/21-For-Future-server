@@ -81,7 +81,7 @@ router.patch("/user-challenge/:id", (req, res)=>{
 
 
 
-//THIS ONE IS FOR DISPLAY THE USER CHALLENGE THAT HE IS CURRENTLY DOING
+//--THIS ONE IS FOR DISPLAY THE USER CHALLENGE THAT HE IS CURRENTLY DOING--
 router.get("/user-challenge/:id", isLoggedIn, (req,res)=>{
 
   const {id} = req.params
@@ -100,6 +100,23 @@ router.get("/user-challenge/:id", isLoggedIn, (req,res)=>{
       })      
     })
 })
+
+//---For deleting a challenge from the userChallenges
+
+router.delete("/user-challenge/:id", isLoggedIn, (req,res)=>{
+
+  const {id} = req.params
+
+  UserChallengeModel.findByIdAndDelete(id)
+    .then((response)=>{
+      res.status(200).json(response)
+    })
+
+    .catch(()=>{
+      console.log("challenge not deleted")
+    })
+
+} )
 
 
 
