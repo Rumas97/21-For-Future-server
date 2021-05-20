@@ -13,22 +13,18 @@ const isLoggedIn = (req, res, next) => {
           message: 'Unauthorized user',
           code: 401,
       })
-  };
-};
-
+  }
+}
 
 router.post("/user-challenge/start/:challengeId", isLoggedIn,  (req,res)=>{
-
-  
+ 
   //the userId will come from the sessions.
   const userId = req.session.loggedInUser._id 
   const {challengeId} = req.params
 
   UserChallengeModel.create({userId, challengeId})
     .then((response)=>{
-     
       res.status(200).json(response)
-
     })
 
     .catch((err)=>{
@@ -42,20 +38,18 @@ router.post("/user-challenge/start/:challengeId", isLoggedIn,  (req,res)=>{
 router.get("/user-challenge/all-challenges", isLoggedIn, (req, res)=>{
 
   const {_id} = req.session.loggedInUser
-  //let _id = "609f923dc7eedc4d6c241474"
   UserChallengeModel.find({userId: _id})
     .populate("challengeId")
     .then((response)=>{
       res.status(200).json(response)
-      //We need to try to send only the name, for performance reasons. Now we send everything
       console.log(response)
     })
-
-    .catch(()=>{
-
+    .catch((err)=>{
+      res.status(500).json({
+        error: "Error showing user challenge",
+        message: err
+        })
     })
-
-
 })
 
 router.patch("/user-challenge/:id", (req, res)=>{
@@ -66,7 +60,6 @@ router.patch("/user-challenge/:id", (req, res)=>{
   UserChallengeModel.findByIdAndUpdate(id, {$addToSet: {dayTracker}}, {new: true})
     .then((response)=>{
       res.status(200).json(response)
-
     })
 
     .catch(()=>{
@@ -76,9 +69,6 @@ router.patch("/user-challenge/:id", (req, res)=>{
       })
     })
 })
-
-
-
 
 
 //--THIS ONE IS FOR DISPLAY THE USER CHALLENGE THAT HE IS CURRENTLY DOING--

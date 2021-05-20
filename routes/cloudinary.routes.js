@@ -1,25 +1,12 @@
-const express = require('express');
-const router  = express.Router();
+const express = require('express')
+const router  = express.Router()
 const UserModel= require("../models/User.model")
-
-// include CLOUDINARY:
-const uploader = require('../config/cloudinary.config.js');
-
-// ensure you have an input type like this in your hbs file
-/*
-<form method="POST" action="/upload" enctype="multipart/form-data">
-    <input type="file" name="imageUrl" accept="image/png, image/jpg">
-    <button type="submit">Submit</button> 
-</form>     
-*/
-
-// imageUrl is the input name in your hbs file
-
+const uploader = require('../config/cloudinary.config.js')
 
 router.post('/upload', uploader.single("imageUrl"), (req, res, next) => {
-     console.log('file is: ', req.file)
+
     if (!req.file) {
-      next(new Error('No file uploaded!'));
+      next(new Error('No file uploaded!'))
       return;
     }
     const{_id}= req.session.loggedInUser
@@ -34,7 +21,6 @@ router.post('/upload', uploader.single("imageUrl"), (req, res, next) => {
         message:err
       })
     })
-
 })
 
-module.exports = router;
+module.exports = router

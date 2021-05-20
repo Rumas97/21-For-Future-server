@@ -1,10 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const UserModel = require ("../models/User.model")
-//We require bcrypt.js
 const bcrypt = require("bcryptjs")
-const { set } = require("mongoose")
-
 
 //--------The Middleware-----------//
 const userIsLoggedIn = (req, res, next)=>{
@@ -37,7 +34,7 @@ router.post("/signup", (req,res)=>{
     return;  
   }
 
-  const myRegex = new RegExp(/^[a-z0-9](?!.*?[^\na-z0-9]{2})[^\s@]+@[^\s@]+\.[^\s@]+[a-z0-9]$/);
+  const myRegex = new RegExp(/^[a-z0-9](?!.*?[^\na-z0-9]{2})[^\s@]+@[^\s@]+\.[^\s@]+[a-z0-9]$/)
     if (!myRegex.test(email)) {
         res.status(500).json({
           errorMessage: 'Email format not correct'
@@ -45,7 +42,7 @@ router.post("/signup", (req,res)=>{
         return;  
     }
 
-  const myPassRegex = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/);
+  const myPassRegex = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
     if (!myPassRegex.test(password)) {
       res.status(500).json({
         errorMessage: 'Password needs to have 8 characters, a number and an Uppercase letter'
@@ -75,7 +72,7 @@ router.post("/signup", (req,res)=>{
         res.status(500).json({
           errorMessage: 'Something went wrong! Go to sleep!',
           message: err,
-        });
+        })
       }
     })
 
@@ -93,7 +90,7 @@ router.post("/login", (req, res)=>{
     return;  
   }
   
-  const myRegex = new RegExp(/^[a-z0-9](?!.*?[^\na-z0-9]{2})[^\s@]+@[^\s@]+\.[^\s@]+[a-z0-9]$/);
+  const myRegex = new RegExp(/^[a-z0-9](?!.*?[^\na-z0-9]{2})[^\s@]+@[^\s@]+\.[^\s@]+[a-z0-9]$/)
     if (!myRegex.test(email)) {
       res.status(500).json({
           error: 'Email format not correct',
@@ -110,9 +107,9 @@ router.post("/login", (req, res)=>{
               //if it matches
           if (doesItMatch) {
                 // req.session is the special object that is available to you
-            userData.password = "***";
-            req.app.locals.loggedInUser = true;
-            req.session.loggedInUser = userData;
+            userData.password = "***"
+            req.app.locals.loggedInUser = true
+            req.session.loggedInUser = userData
             console.log("the login user" + req.session.loggedInUser)
             res.status(200).json(userData)
           }
