@@ -315,91 +315,91 @@ const challenges = [
         day: 6
       },
       {
-        description: "This is description for day 7",
+        description: "Compost leftover food to feed plants",
         list: [String],
         url: String,
         day: 7
       },
       {
-        description: "This is description for day 8",
+        description: "Use coffee grounds as a fertilizer for your plants",
         list: [String],
         url: String,
         day: 8
       },
       {
-        description: "This is description for day 9",
+        description: " Take stock of your near-expiration items. Make a plan for what to do with them",
         list: [String],
         url: String,
         day: 9
       },
       {
-        description: "This is description for day 10",
+        description: "Write down everything you throw away in a day. By keeping a log of what food you throw away, you can then have a starting point in finding alternative uses for those food items. ",
         list: [String],
         url: String,
         day: 10
       },
       {
-        description: "This is description for day 11",
+        description: "Avocados are like magic for the skin with vitamins A, D, E, and B-6. Making skincare products out of avocado instead of tossing them in the trash is a completely natural way to make your skin glow",
         list: [String],
         url: String,
         day: 11
       },
       {
-        description: "This is description for day 12",
+        description: "Freezing the leftovers you don’t have time to get around to is an easy way to cut your waste and have some dishes ready for you when you don’t feel like cooking in the future!",
         list: [String],
         url: String,
         day: 12
       },
       {
-        description: "This is description for day 13",
+        description: "Learning how to use these drawers properly can save you a surprising amount of money and keep you from having to find something to do with that brown lettuce you never get around to eating.",
         list: [String],
         url: String,
         day: 13
       },
       {
-        description: "This is description for day 14",
+        description: "By keeping an organized fridge you’re much more likely to see your food and eat it! ",
         list: [String],
         url: String,
         day: 14
       },
       {
-        description: "This is description for day 15",
+        description: "Use a smaller plate to serve dinner to prevent overeating",
         list: [String],
         url: String,
         day: 15
       },
       {
-        description: "This is description for day 16",
+        description: "Take stock of your near-expiration items. Make a plan for what to do with them",
         list: [String],
         url: String,
         day: 16
       },
       {
-        description: "This is description for day 17",
+        description: "Have one dinner dedicated to only leftovers. Bring out your creativity!",
         list: [String],
         url: String,
         day: 17
       },
       {
-        description: "This is description for day 18",
+        description: "Put your dry foods in a container so they don’t go stale",
         list: [String],
         url: String,
         day: 18
       },
       {
-        description: "This is description for day 19",
+        description: "Use the top shelf in the fridge as a high priority shelf for things to be eaten in the next few days",
         list: [String],
         url: String,
         day: 19
       },
       {
-        description: "This is description for day 20",
+        description: "Make fried rice with extra vegetable bits",
         list: [String],
         url: String,
         day: 20
       },
       {
-        description: "This is description for day 21",
+        description: "Hold off your next grocery trip by 3 days and use the food you already have",
         list: [String],
         url: String,
         day: 21
@@ -413,127 +413,127 @@ const challenges = [
     category: "Food",
     challengeDay: [
       {
-        description: "For today, go out and buy some plant based milk. It can be almond, soy, oat",
+        description: "Try a new vegetable today. Whether it is frozen, fresh or canned, work a new vegetable on to your plate today. Try working a vegetable into a stir-fry, salad or soup.",
         list: ["Water, Almond, Glass"],
         url: String,
         day: 1
       },
       {
-        description: "This is description for day 2",
+        description: "Revive wilted greens.Simply place your greens in ice water for 15 to 30 minutes, pat dry and enjoy.",
         list: [String],
         url: String,
         day: 2
       },
       {
-        description: "This is description for day 3",
+        description: "Craving the meaty texture? Cauliflower is a beloved plant-based swap for hearty-tasting recipes without the meat.",
         list: [String],
         url: String,
         day: 3
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Try a new fruit. Just like with vegetables, fruits are a healthy option whether they’re canned, frozen, dried or fresh (just look for options without added sugar).",
         list: [String],
         url: String,
         day: 4
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Learn to love beans.They come in many flavors, shapes and sizes and can be swapped in to make recipes that would originally call for meat. ",
         list: [String],
         url: String,
         day: 5
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "There are so many meat substitutes and plant-based proteins to choose from. Try soy products, like tofu and tempeh, for stir-fries, salads and more. ",
         list: [String],
         url: String,
         day: 6
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Smoothies are a great way to boost your veggie intake.",
         list: [String],
         url: String,
         day: 7
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "As spring turns to summer, gardening season is in full swing. Try planting your own herb basket ",
         list: [String],
         url: String,
         day: 8
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "An easy way to boost the fiber, nutrition and protein you get in a day is to choose whole grains when you can.",
         list: [String],
         url: String,
         day: 9
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Mushrooms might be the “meatiest” tasting vegetable of them all. They are packed with umami flavor and impressive nutrition.",
         list: [String],
         url: String,
         day: 10
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Prep ahead. Making meals and snacks ahead of time can help you be prepared for when hunger hits so you have something healthy and plant-based at the ready. ",
         list: [String],
         url: String,
         day: 11
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Recipes like our Vegetarian Mushroom Stroganoff put a plant-based spin on a comfort food favorite. It is hearty, nutritious and packed with so much flavor you won’t miss the meat.",
         list: [String],
         url: String,
         day: 12
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Making a meal for family or friends is a great way to show how delicious eating a plant-based diet can be. ",
         list: [String],
         url: String,
         day: 13
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Keep lettuce or salad greens on hand to make a simple side salad to pair with meals. Not only will it help you increase your veggie intake, but can also help make your meals more satisfying",
         list: [String],
         url: String,
         day: 14
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Let your slow cooker do the work for this Lentil, Carrot & Potato Soup recipe. This hearty main is full of vegetables and lentils for a filling, nutritious meal.",
         list: [String],
         url: String,
         day: 15
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Try making hummus, bread, salad dressing and more at home instead of choosing store bought.",
         list: [String],
         url: String,
         day: 16
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Try soy products, like tofu and tempeh, for stir-fries, salads and more. There are a variety of plant-based meat substitutes that are available in your grocery store or online.",
         list: [String],
         url: String,
         day: 17
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Try to eat fully plant-based by cutting out any dairy, eggs and animal products today. ",
         list: [String],
         url: String,
         day: 18
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Eating plant-based doesn’t mean giving up sweet treats. Be creative and make your plant based cookies",
         list: [String],
         url: String,
         day: 19
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Visit a local farmers’ market or farm in your area. You can also check out the local produce options at your grocery store. ",
         list: [String],
         url: String,
         day: 20
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Whether it’s at a market, co-op or grocery store, try in-season produce today for peak flavor and nutrition.",
         list: [String],
         url: String,
         day: 21

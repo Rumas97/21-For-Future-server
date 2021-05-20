@@ -5,7 +5,8 @@ const challengesModel = require ("../models/Challenge.model")
 const lifeStyleChallenges = [
   {
     challengeName: "Plastic Free", 
-    challengeImage: "https://www.clipartmax.com/png/middle/101-1016762_doodle-ff-30-milk-doodle.png",
+    generalDesc: "Plastic is in just about everything. Fifty percent of the plastic we use is used only once and then thrown away. Enough plastic is thrown away each year to circle the earth four times. We currently recover only five percent of the plastics we produce.",
+    challengeImage: "https://image.freepik.com/free-vector/all-plastic-wanna-be-free-card-isolated-white-vector-cartoon-character-illustration-design-simple-flat-style-plastic-free-waste-recycling-concept_92289-112.jpg",
     category: "Lifestyle",
     challengeDay: [
       {
