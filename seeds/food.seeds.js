@@ -275,7 +275,7 @@ const challenges = [
   {
     challengeName: "Reduce food waste", 
     generalDesc: "The United Nations estimates that one in nine people in the world do not have access to sufficient food to lead a healthy life. More people are reported to die from hunger every day than AIDS, malaria and tuberculosis combined. But at the same time, nearly one-third of the food that is produced in the world is lost or wasted due to one reason or the other. Food wastage, which includes both food loss and food waste, is not only morally irresponsible, but also causes huge economical losses as well as severe damage to the world around us",
-    challengeImage: "https://ibb.co/44VxW9z",
+    challengeImage: "https://media.istockphoto.com/vectors/reusable-grocery-eco-bag-with-vegetables-hand-drawn-vector-id1149453752?k=6&m=1149453752&s=612x612&w=0&h=AM3R23OkCTv86dYq5IiR7T2ousvYyLJwCaNKi8YJKmU=",
     category: "Food",
     challengeDay: [
       {
@@ -405,7 +405,141 @@ const challenges = [
         day: 21
       },
     ]
-  } 
+  },
+  {
+    challengeName: "Happy veggies", 
+    generalDesc: "If we really want to reduce the human impact on the environment, the simplest and cheapest thing anyone can do is to eat less meat. Behind most of the joints of beef or chicken on our plates is a phenomenally wasteful, land- and energy-hungry system of farming that devastates forests, pollutes oceans, rivers, seas and air, depends on oil and coal, and is significantly responsible for climate change. ",
+    challengeImage: "https://image.freepik.com/free-vector/cute-funny-happy-vegetables-fruits_1270-440.jpg",
+    category: "Food",
+    challengeDay: [
+      {
+        description: "For today, go out and buy some plant based milk. It can be almond, soy, oat",
+        list: ["Water, Almond, Glass"],
+        url: String,
+        day: 1
+      },
+      {
+        description: "This is description for day 2",
+        list: [String],
+        url: String,
+        day: 2
+      },
+      {
+        description: "This is description for day 3",
+        list: [String],
+        url: String,
+        day: 3
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 4
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 5
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 6
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 7
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 8
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 9
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 10
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 11
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 12
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 13
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 14
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 15
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 16
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 17
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 18
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 19
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 20
+      },
+      {
+        description: "Going dairy free is good for the environment",
+        list: [String],
+        url: String,
+        day: 21
+      },
+    ]
+  }, 
 
 ]
 
