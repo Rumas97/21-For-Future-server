@@ -16,25 +16,25 @@ const challenges = [
         day: 1
       },
       {
-        description: "This is description for day 2",
+        description: "Try adding soy or oat milk to your coffee or tea today. Take it up a notch and blend together espresso, oatmilk, sweetener of choice and ice cubes to make your very own frappucino!",
         list: [String],
         url: String,
         day: 2
       },
       {
-        description: "This is description for day 3",
+        description: "Replace yogurt with non-dairy yogurts made from rice, soy or coconut. Bonus points for topping yogurt with fresh berries and fruits.",
         list: [String],
         url: String,
         day: 3
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Love baking? We got you covered! Replace butter with coconut oil for the added coconut flavor or proportionate amounts of oil ",
         list: [String],
         url: String,
         day: 4
       },
       {
-        description: "Going dairy free is good for the environment",
+        description: "Inform yourself about dairy free calcium sources. Almonds, Kale, Broccoli are awesome sources of calcium amongst other things.",
         list: [String],
         url: String,
         day: 5
@@ -139,7 +139,7 @@ const challenges = [
   },
   {
     challengeName: "Go vegan", 
-    generalDesc: "A global shift to a plant-based diet could reduce mortality and greenhouse gases caused by food production by 10% and 70%, respectively, by 2050",
+    generalDesc: "A global shift to a plant-based diet could reduce mortality and greenhouse gases caused by food production by 10% and 70%, respectively, by 2050. Researchers at the University of Oxford found that cutting meat and dairy products from your diet could reduce an individual's carbon footprint from food by up to 73 per cent.",
     challengeImage: "https://cdn.dribbble.com/users/427368/screenshots/11523001/dribbble.jpg",
     category: "Food",
     challengeDay: [
@@ -279,37 +279,37 @@ const challenges = [
     category: "Food",
     challengeDay: [
       {
-        description: "Take a look inside your refridgerator",
-        list: ["Is there anything you can cook with, Last nights leftovers, bananas going soft"],
-        url: String,
+        description: "Learn to preserve fruits and vegetables. Whether that is dehydrating, freezing, pickling in vinegar, or immersing in olive oil, all are better than throwing your food away!Check out this blog post to learn ways of preserving fruis=ts and veggies",
+        list: [String],
+        url: "https://commonsensehome.com/home-food-preservation/",
         day: 1
       },
       {
-        description: "Storing food better to last longer",
+        description: "Buy ugly produce. Our high standards for what fruit and vegetables should look like leaves retailers with rigid quality specifications, thus rejecting a lot of produce that comes their way",
         list: [String],
         url: String,
         day: 2
       },
       {
-        description: "This is description for day 3",
+        description: "Declutter your fridge. By keeping an organized fridge you’re much more likely to see your food and eat it! Find ways to organize your frige in this post.",
         list: [String],
-        url: String,
+        url: "https://www.thekitchn.com/the-best-way-to-organize-your-fridge-tips-from-the-kitchn-48286",
         day: 3
       },
       {
-        description: "This is description for day 4",
+        description: "Save stems, ends and peels of fruits and vegetables for smoothies. They can actually be some of the more nutrient and fiber-rich portions of our produce.",
         list: [String],
         url: String,
         day: 4
       },
       {
-        description: "This is description for day 5",
+        description: "Use tops, stalks, and peels for a homemade stock. Kitchen scraps may not be your favorite to eat as-is, but when put into a stock they can provide a lot of flavor and nutrients!",
         list: [String],
         url: String,
         day: 5
       },
       {
-        description: "This is description for day 6",
+        description: "Use fruit peels to flavor your water. Oranges are known as one of the most flavorful fruits to drink, but have you thought of just putting the peel in their drink?",
         list: [String],
         url: String,
         day: 6
