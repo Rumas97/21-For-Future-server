@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.465f93c9.chunk.css",
-    "main.js": "/static/js/main.49bb968e.chunk.js",
-    "main.js.map": "/static/js/main.49bb968e.chunk.js.map",
+    "main.css": "/static/css/main.c62d38e9.chunk.css",
+    "main.js": "/static/js/main.9213c7c1.chunk.js",
+    "main.js.map": "/static/js/main.9213c7c1.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2739a623.js",
     "runtime-main.js.map": "/static/js/runtime-main.2739a623.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/static/css/2.4c97ca4f.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.7f7a8876.chunk.js.map": "/static/js/2.7f7a8876.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.465f93c9.chunk.css.map": "/static/css/main.465f93c9.chunk.css.map",
+    "static/css/main.c62d38e9.chunk.css.map": "/static/css/main.c62d38e9.chunk.css.map",
     "static/js/2.7f7a8876.chunk.js.LICENSE.txt": "/static/js/2.7f7a8876.chunk.js.LICENSE.txt",
     "static/media/Battery.febc827f.svg": "/static/media/Battery.febc827f.svg",
     "static/media/CleanMind.4773cc5a.svg": "/static/media/CleanMind.4773cc5a.svg",
@@ -20,14 +20,13 @@
     "static/media/TeslaCar.609e5525.svg": "/static/media/TeslaCar.609e5525.svg",
     "static/media/avatar.2e4ef16d.png": "/static/media/avatar.2e4ef16d.png",
     "static/media/greenpeace.d8930cef.png": "/static/media/greenpeace.d8930cef.png",
-    "static/media/vivaconagua.c41b2f83.png": "/static/media/vivaconagua.c41b2f83.png",
     "static/media/wwf.d9b00071.png": "/static/media/wwf.d9b00071.png"
   },
   "entrypoints": [
     "static/js/runtime-main.2739a623.js",
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.7f7a8876.chunk.js",
-    "static/css/main.465f93c9.chunk.css",
-    "static/js/main.49bb968e.chunk.js"
+    "static/css/main.c62d38e9.chunk.css",
+    "static/js/main.9213c7c1.chunk.js"
   ]
 }
